@@ -13,6 +13,7 @@ class note_command(gdb.Command):
         if os.path.exists(file_name):
             print("json note file found.")
             with open(file_name, "r") as f:
+                global notes
                 notes = json.loads(f.read())
         else:
             notes = {}
